@@ -1,0 +1,16 @@
+</div>
+        <div class="footer-bottom"><p> GGM Professional Services. All rights reserved. | Designed with care in Tanzania</p></div>
+    </footer>
+    <a href="https://wa.me/255683230252?text=Hi%20GGM,%20I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, observerOptions);
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) { navbar.style.background = 'rgba(26, 26, 46, 0.98)'; navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)'; } else { navbar.style.background = 'rgba(26, 26, 46, 0.95)'; navbar.style.boxShadow = 'none'; } });
+        document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); const name = document.getElementById('name').value; const phone = document.getElementById('phone').value; const service = document.getElementById('service').value; const message = document.getElementById('message').value; const serviceNames = { 'cv-cover': 'CV + Cover Letter (TSh 20,000)', 'business': 'Business Profile (TSh 35,000)', 'both': 'Both Services' }; let whatsappMessage = `Hi GGM, I'm ${name}. I'm interested in your ${serviceNames[service]} service.`; if (message) { whatsappMessage += ` Additional details: ${message}`; } whatsappMessage += ` My contact: ${phone}`; const encodedMessage = encodeURIComponent(whatsappMessage); window.open(`https://wa.me/255683230252?text=${encodedMessage}`, '_blank'); });
+        const mobileMenu = document.querySelector('.mobile-menu'); const navLinks = document.querySelector('.nav-links'); mobileMenu.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; navLinks.style.position = 'absolute'; navLinks.style.top = '100%'; navLinks.style.left = '0'; navLinks.style.right = '0'; navLinks.style.background = 'rgba(26, 26, 46, 0.98)'; navLinks.style.flexDirection = 'column'; navLinks.style.padding = '20px'; navLinks.style.gap = '15px'; });
+    </script>
+</body>
+</html>
